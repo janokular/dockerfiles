@@ -1,0 +1,6 @@
+services:
+  checkov:
+    image: bridgecrew/checkov:latest
+    container_name: checkov
+    volumes:
+      - .:/workspace:ro

@@ -1,0 +1,13 @@
+services:
+  git:
+    image: git:1
+    container_name: git
+    restart: unless-stopped
+    ports:
+      - "2222:22"
+    volumes:
+      - git-data:/home/git
+
+volumes:
+  git-data:
+    name: git-data
