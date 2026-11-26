@@ -25,4 +25,7 @@ RUN ssh-keygen -A
 
 EXPOSE 22
 
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+    CMD ["pgrep", "sshd"]
+
 CMD ["/usr/sbin/sshd", "-D"]
